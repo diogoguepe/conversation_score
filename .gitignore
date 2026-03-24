@@ -1,0 +1,13 @@
+.env
+.DS_Store
+*.pdf
+output/
+examples/humanos.json
+examples/stress_test.json
+generate_stress.py
+init_all.py
+ARCHITECTURE.md
+AI_USAGE.md
+__pycache__/
+*.pyc
+.pytest_cache/
