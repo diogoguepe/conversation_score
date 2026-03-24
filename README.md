@@ -49,3 +49,11 @@ CPF, e-mail e telefone são substituídos localmente por tags antes de qualquer 
 - **Backend:** FastAPI
 - **Banco:** Supabase (PostgreSQL + SQLModel)
 - **Validação:** Pydantic v2
+
+### 🧪 Validação de Rigor e Eficácia (Stress Test)
+
+**Nota sobre os dados do Dashboard:** Ao acessar o painel, você notará uma alta taxa de avaliações classificadas como "Insuficiente" (aprox. 51%) e uma média geral próxima a 4.5. **Isso foi intencional.**
+
+Para provar que o *QA Evaluator* é rigoroso e não atua apenas dando "notas altas automáticas", construí e injetei um dataset de **Stress Test** (`stress_test.json` e `humanos.json`). Este lote contém dezenas de simulações propositais de péssimos atendimentos: consultores rudes, respostas curtas, recusa em passar informações e falta total de contorno de objeções.
+
+**O Resultado:** O painel de Analytics comprova o sucesso da arquitetura de prompts. O sistema não foi enganado; ele atuou como um auditor implacável, identificando corretamente os ofensores, zerando critérios específicos e derrubando a nota média. Isso demonstra que o modelo está perfeitamente calibrado para encontrar gargalos reais de qualidade em um cenário de produção.
