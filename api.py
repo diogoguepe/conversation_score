@@ -91,7 +91,7 @@ class BatchRequest(BaseModel):
         ..., description="Lista de sessões a serem avaliadas em lote."
     )
     max_concurrent: Optional[int] = Field(
-        2, description="Número máximo de sessões processadas em paralelo. Padrão: 2."
+        2, ge=1, le=20, description="Número máximo de sessões processadas em paralelo. Padrão: 2. Máximo: 20."
     )
 
     model_config = {

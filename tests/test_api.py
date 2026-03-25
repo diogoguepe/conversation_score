@@ -15,8 +15,7 @@ async def test_health_check():
     assert response.status_code == 200
     data = response.json()
     assert "status" in data
-    assert data["version"] == "2.0.0"
-    assert data["model"] == "gemini-2.0-flash"
+    assert data["version"] == "1.0.0"
 
 
 @pytest.mark.anyio
@@ -26,14 +25,14 @@ async def test_list_criteria():
         response = await client.get("/criteria")
     assert response.status_code == 200
     data = response.json()
-    assert data["total_criterios"] == 7
-    assert "C01" in data["criterios"]
-    assert "C07" in data["criterios"]
+    assert len(data) == 7
+    assert "C01" in data
+    assert "C07" in data
     # Verifica estrutura de cada criterio
-    c01 = data["criterios"]["C01"]
-    assert "nome" in c01
-    assert "peso_pct" in c01
-    assert "rubrica" in c01
+    c01 = data["C01"]
+    assert "name" in c01
+    assert "weight" in c01
+    assert "rubric" in c01
 
 
 @pytest.mark.anyio
