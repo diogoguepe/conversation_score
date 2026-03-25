@@ -1,5 +1,7 @@
 # Conversation Score — +A Educação
 
+![CI](https://github.com/diogoguepe/conversation_score/actions/workflows/ci.yml/badge.svg)
+
 Ferramenta de pontuação automática de atendimentos via WhatsApp/Chat. Recebe transcrições de conversas, processa por múltiplos agentes de IA e retorna scores por critério com justificativas baseadas em evidências.
 
 ## Como executar
